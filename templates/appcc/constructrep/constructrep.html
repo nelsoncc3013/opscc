@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+       <link href="${STATIC_URL}css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- kendo ui css -->
+     <link href="${STATIC_URL}css/kendo.common.min.css" type="text/css" rel="stylesheet">
+    <!--link href="/static/css/kendo.common.min.css" type="text/css" rel="stylesheet"-->
+    <link href="${STATIC_URL}css/kendo.default.min.css" type="text/css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <!--蓝鲸提供的公用样式库 -->
+    <link href="${STATIC_URL}css/bk.css" type="text/css" rel="stylesheet">
+    <link href="${STATIC_URL}css/bk_pack.css" type="text/css" rel="stylesheet">
+<link href="${STATIC_URL}css/">
+    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+    <script src="${STATIC_URL}js/jquery-1.10.2.min.js?" type="text/javascript"></script>
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="${STATIC_URL}js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- 包括所有kendoui的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="${STATIC_URL}js/kendo.all.min.js" type="text/javascript"></script>
+    <script src="${STATIC_URL}js/bk.js" type="text/javascript"></script>
+    <!-- 数据埋点统计 -->
+    <script src="${STATIC_URL}js/analysis.js" type="text/javascript"></script>
+
+</head>
+
+<body class="bg-bright1" data-bg-color="bg-bright1">
+    <div class="king-page-box">
+        <div class="king-layout1-header">
+            <nav role="navigation" class="navbar navbar-default king-horizontal-nav3     f14">
+                <div class="nav-container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bk-example-navbar-collapse-3">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="${SITE_URL}">
+                            <img src="/static/img/logocn.png" alt="" class="logo"> </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-responsive-collapse" id="bk-example-navbar-collapse-3">
+
+                         <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="搜索..."> </div>
+                        </form>
+
+
+                        <ul class="nav navbar-nav navbar-right">
+                             <li class="fa ">
+
+                                 <a href="javascript:void(0);">帮助<span></span></a> </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="/static/img/avatar.png" class="avatar">
+                                    <span>个人信息</span>
+                                </a>
+                            </li>
+                             <li>
+                        <a href="javascript:void(0)">
+                            退出
+                        </a>
+                    </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="king-layout1-main clearfix">
+            <!-- sidebar start -->
+            <div class="king-layout1-sidebar" style="width:216px;">
+                <nav style="overflow:hidden;">
+                    <div class="king-vertical-nav9    f14">
+                        <div class="navbar-collapse navbar-hov">
+                            <ul class="nav navbar-nav side-nav">
+                              <li class="active">
+                                    <a href="${SITE_URL}app_delivery"> <i class="fa fa-dashboard ">                            </i>
+                                        <span>应用交付</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="${SITE_URL}tool_list"> <i class="fa fa-wrench ">                            </i>
+                                        <span>交付工具</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="${SITE_URL}process_list;"> <i class="fa fa-edit ">                            </i>
+                                        <span>流程调度</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="${SITE_URL}time_tasklist"> <i class="fa fa-ellipsis-h ">                            </i>
+                                        <span>定时任务</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                              <li class="opens">
+                                    <a href="javascript:void(0);"> <i class="fa fa-wrench ">                            </i>
+                                        <span>构建库</span> <i class="fa fa-fw fa-caret-down"></i> </a>
+                                    <ul id="demo" class="collapse" style="display: block;">
+                                        <li><a href="${SITE_URL}jenkinsCI">Jenkins CI</a></li>
+                                        <li><a href="${SITE_URL}soft_package">程序包</a></li>
+                                        <li><a href="${SITE_URL}conf_package">配置包</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

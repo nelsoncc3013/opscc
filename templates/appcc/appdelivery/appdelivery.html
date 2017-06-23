@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="container-fluid">
+        <!-- 带搜索表格(DataTables)-1 Start -->
+        <table id="app_list" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>应用名称</th>
+                    <th>开发负责人</th>
+                    <th>测试负责人</th>
+                    <th>运维负责人</th>
+                    <th>最后访问时间</th>
+                    <th>操作</th>
+
+                </tr>
+            </thead>
+            <tbody id="app_list">
+            %for app in app_list:
+            <tr>
+                <td ><a href="${SITE_URL}main_deploy?name=${app.get('appname')}">${app.get('appname')}</a></td>
+                <td>${app.get('devleader')}</td>
+                <td>${app.get('testleader')}</td>
+                <td>${app.get('opsleader')}</td>
+                <td>${app.get('lasttime')}</td>
+                 <td>
+                        <button id="app_delete" class="king-btn king-info">删除</button>
+
+                 </td>
+            </tr>
+            %endfor
+            </tbody>
+        </table>
+        <!-- 带搜索表格(DataTables)-1 End -->
+    </div>
+                </div>
+            </div>
+    <script type="text/javascript">
+  $(function () {
+    //table2_demo4_js_start
+    //表格(DataTables)-4，综合示例
+    var language = {
+      search: '搜索：',
+      lengthMenu: "每页显示 _MENU_ 记录",
+      zeroRecords: "没找到相应的数据！",
+      info: "分页 _PAGE_ / _PAGES_",
+      infoEmpty: "暂无数据！",
+      infoFiltered: "(从 _MAX_ 条数据中搜索)",
+      paginate: {
+        first: '首页',
+        last: '尾页',
+        previous: '上一页',
+        next: '下一页',
+      }
+    }
+     $("#table21_demo4").dataTable({
+        autoWidth: false,
+        lengthChange: true, //不允许用户改变表格每页显示的记录数
+        pageLength : 5, //每页显示几条数据
+        lengthMenu: [5, 10, 20], //每页显示选项
+        pagingType: 'full_numbers',
+        ordering: true,
+
+    "columns": [
+        { "data": "name", render: function ( data, type, row ) {
+        return '<a href="${SITE_URL}main_deploy?name='+ data+'">'+ data+'</a>';
+    } },
+        { "data": "memo",render:function(data,type,row){
+            return '<a>'+data+'</a>'
+        } },
+        { "data": "dev" },
+        { "data": "test" },
+        { "data": "ops" },
+        { "data": "lasttime" },
+          {
+              data: null,
+              orderable: false,
+              render: function (data, type, row, meta) {
+                  return '<a class="king-btn king-default del">删除</a>';
+              }
+          }
+    ],
+
+        language:language
+    });
+
+    var t = $("#app_list").DataTable();//获取datatables对象
+    //删除按钮绑定事件
+    $("#app_delete tbody").on('click', 'a.del', function(){
+        var row = t.row( $(this).parents('tr') ),//获取按钮所在的行
+          data = row.data();
+        if(confirm('确定要删除'+data.name+' ?')){
+          row.remove().draw();
+        }
+
+    });
+    //table2_demo4_js_end
+  });
+    </script>
+</%block>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="king-page-topbar pl20 pr20">
+
+    <ul class="breadcrumb king-breadcrumb p12 bg-white">
+        <li>流程调度</li>
+
+    </ul>
+    <ul></ul>
+      <a class="king-btn-demo king-btn king-default" title="流程编排" href="${SITE_URL}flow_orch">流程编排</a>
+    <a class="king-btn-demo king-btn king-default" title="查看历史" href="${SITE_URL}history_flow">查看历史</a>
+
+    <ul></ul>
+    <ul></ul>
+    <div class="form-group">
+        <label for="inputCount3"></label>
+        <input type="text" class="form-control" id="inputCount3" placeholder="根据流程名称过滤">
+    </div>
+      <!--HTML-->
+<section class="king-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrapper" id="table9_demo1" style="height: 350px;overflow: auto;position: relative;">
+                <!-- 锁定头部表格-1 Start -->
+                <table class="table table-out-bordered table-bordered table-header-bg table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width:20%;">流程</th>
+                            <th>创建者</th>
+                            <th>分类</th>
+                            <th>最近访问</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>构建</td>
+                            <td>root</td>
+                            <td>应用交付</td>
+                            <td>2017-4-22</td>
+                        </tr>
+                         <tr>
+                            <td>测试发布</td>
+                            <td>root</td>
+                            <td>应用交付</td>
+                            <td>2017-5-5</td>
+                        </tr>
+                     <tr>
+                            <td>UAT发布</td>
+                            <td>root</td>
+                            <td>应用交付</td>
+                            <td>2017-5-7</td>
+                        </tr>
+                     <tr>
+                            <td>生产发布</td>
+                            <td>root</td>
+                            <td>应用交付</td>
+                            <td>2017-5-10</td>
+                        </tr>
+                     <tr>
+                            <td>系统巡检</td>
+                            <td>root</td>
+                            <td>基础运维</td>
+                            <td>2017-4-22</td>
+                        </tr>
+                     <tr>
+                            <td>数据脱敏</td>
+                            <td>root</td>
+                            <td>DB</td>
+                            <td>2017-4-25</td>
+                        </tr>
+                     <tr>
+                            <td>应用环境安装</td>
+                            <td>root</td>
+                            <td>App</td>
+                            <td>2017-4-22</td>
+                        </tr>
+                     <tr>
+                            <td>应用健康修复</td>
+                            <td>root</td>
+                            <td>APP</td>
+                            <td>2017-4-22</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+                <!-- 锁定头部表格-1 End -->
+            </div>
+        </div>
+    </div>
+</section><!--JS-->
+<script type="text/javascript">
+$(document).ready(function($) {
+    //table9_demo1_js_start
+    //锁定头部表格-1
+    $('#table9_demo1 .table').floatThead({
+        scrollContainer: function($table){
+            return $table.closest('.wrapper');
+        }
+    });
+    //table9_demo1_js_end
+});
+</script>
+
+            </div>
+        </div>
+    </div>
+</%block>

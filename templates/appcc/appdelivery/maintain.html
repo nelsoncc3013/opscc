@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="king-page-topbar pl20 pr20">
+
+    <ul class="breadcrumb king-breadcrumb p12 bg-white">
+        <li><a href="${SITE_URL}main_deploy">返回</a></li>
+        <li>维护</li>
+
+    </ul>
+    <ul></ul>
+    <!--
+如果没有引用以下文件，请去掉此注释
+<link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css?v=1.0.1" rel="stylesheet">
+-->
+<!--
+如果没有引用以下文件，请去掉此注释
+<link href="https://magicbox.bkclouds.cc/static_api/v3/assets/select2-3.5.2/select2.css" rel="stylesheet">
+<script src="https://magicbox.bkclouds.cc/static_api/v3/assets/select2-3.5.2/select2.js"></script>
+-->
+    <ul>
+<div class="plugin3_demo" id="plugin3_demo1" style="display:inline-block;">
+    <!-- select2 静态 start -->
+    <select class="select2_box" style="width:200px;">
+        <option value=""></option>
+        <option value="">tomcat</option>
+        <option value="">jdk</option>
+        <option value="">conf</option>
+    </select>
+    <!-- select2 静态 end -->
+</div>
+        </ul>
+<script type="text/javascript">
+    // select2 基础
+    $("#plugin3_demo1 .select2_box").select2();
+</script>
+     <ul></ul>
+<!--
+如果没有引用以下文件，请去掉此注释
+<link href="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css?v=1.0.1" rel="stylesheet">
+<script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+-->
+<table class="table table-bordered table7_demo">
+    <thead>
+        <tr>
+            <th>主机</th>
+            <th>版本</th>
+            <th>部署路径</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>192.168.10.112</td>
+            <td>1.11</td>
+            <td>/app</td>
+
+            <td>
+                <button class="btn btn-xs btn-success" title="启动">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button class="btn btn-xs btn-warning" title="重启">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </button>
+                <button class="btn btn-xs btn-danger" title="停止">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </td>
+        </tr>
+          <tr>
+            <td>192.168.10.112</td>
+            <td>1.11</td>
+            <td>/app</td>
+
+            <td>
+                <button class="btn btn-xs btn-success" title="启动">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button class="btn btn-xs btn-warning" title="重启">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </button>
+                <button class="btn btn-xs btn-danger" title="停止">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </td>
+        </tr>
+          <tr>
+            <td>192.168.10.112</td>
+            <td>1.11</td>
+            <td>/app</td>
+
+            <td>
+                <button class="btn btn-xs btn-success" title="启动">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button class="btn btn-xs btn-warning" title="重启">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </button>
+                <button class="btn btn-xs btn-danger" title="停止">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+</div>
+                </div>
+            </div>
+</%block>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="king-page-topbar pl20 pr20">
+
+    <ul class="breadcrumb king-breadcrumb p12 bg-white">
+        <li>交付工具</li>
+        <li>工具信息</li>
+        <li>工具高级设置</li>
+
+    </ul>
+    <ul>
+
+        </ul>
+    <!--HTML-->
+<!-- 表单验证(Validate)-1 Start -->
+<form class="form-horizontal" action="index.html" id="form4_demo1">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="validation_name">只允许已下用户执行</label>
+        <div class="col-sm-7">
+            <input class="form-control" id="validation_name" name="validation_name" placeholder="选择用户" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="validation_email">默认执行用户(服务器上用户)</label>
+        <div class="col-sm-7">
+            <input class="form-control" id="validation_email" name="validation_email" placeholder="root" type="text">
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-sm-2" for="validation_email">执行超时时间(s)</label>
+        <div class="col-sm-7">
+            <input class="form-control" id="validation_email" name="validation_email" placeholder="10" type="text">
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="validation_select"></label>
+        <div class="col-sm-7">
+            <button class="king-btn king-info" type="submit" id="btn-validate">保存</button>
+            <button class="king-btn king-info" type="submit" id="btn-validate">取消</button>
+        </div>
+    </div>
+</form>
+<!-- 表单验证(Validate)-1 End --><!--JS-->
+<script src="https://magicbox.bkclouds.cc/static_api/v3/assets/validate-1.14.0/js/jquery.validate.js"></script>
+<script>
+$(document).ready(function() {
+    //form4_demo1_js_start
+    /*添加手机号验证方法*/
+    $.validator.addMethod("phone",function(value, element, param){
+        if(/^1\d{10}$/.test(value)){
+             return true;
+        }
+    });
+     /* 表单验证 */
+    $('#form4_demo1').validate({
+        errorElement: 'span',
+        errorClass: 'text-danger',
+        rules: {
+            validation_name: {
+                required: true,
+                minlength: 2
+            },
+             validation_phone: {
+                required: true,
+                phone: true
+            },
+            validation_email: {
+                required: true,
+                email: true
+            },
+            validation_password: {
+                required: true,
+                minlength: 6
+            },
+            validation_password_confirm: {
+                required: true,
+                minlength: 6,
+                equalTo: '#validation_password'
+            },
+            validation_date: {
+                dateISO: true,
+                required: true
+            },
+            validation_select: {
+                required: true
+            }
+        },
+        messages: {
+            validation_name: "请输入姓名(至少两位)",
+            validation_phone : "手机号必须是11数字，以1开头",
+            validation_email: "请输入正确邮箱",
+            validation_password: "密码数不能少于6位",
+            validation_password_confirm: "两次密码不一致",
+            validation_date: "日期格式：2000-01-01",
+            validation_select:"必须选择"
+        }
+    });
+    //form4_demo1_js_end
+});
+</script>
+
+
+
+</div>
+                </div>
+            </div>
+</%block>

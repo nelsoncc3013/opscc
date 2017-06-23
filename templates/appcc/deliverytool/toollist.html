@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+
+<div class="king-page-topbar pl20 pr20">
+
+    <ul class="breadcrumb king-breadcrumb p12 bg-white">
+        <li>交付工具</li>
+
+    </ul>
+    <ul></ul>
+      <a class="king-btn-demo king-btn king-default" title="新建工具" href="${SITE_URL}create_tool">新建工具</a>
+    <a class="king-btn-demo king-btn king-default" title="查看历史" href="${SITE_URL}tool_history">查看历史</a>
+
+    <ul></ul>
+    <ul></ul>
+    <div class="form-group">
+        <label for="inputCount3"></label>
+        <input type="text" class="form-control" id="tool_filt" placeholder="根据工具名称过滤">
+    </div>
+<div class="standardCon shou standardCon_backgroud">
+        <div class="light_wd ">
+             <style type="text/css">
+                                .relative-box {
+                                    float: left;
+                                    margin-left: 50px;
+                                }
+                            </style>
+            <div class="light-img clearfix"  >
+                <div class="img-wd relative-box  ">
+                    <a href="${SITE_URL}tool_info">
+                        <img style="width:64px; height:64px;" src="https://magicbox.bkclouds.cc/static_api/v3/components/intro/images/maker_app01.png" >
+                    </a>
+                    <a href="javascript:;"><i class="fa fa-pencil pencil active" data-step="2" data-intro="编辑应用" data-position='right' ></i></a>
+                    <a href="javascript:;"><i  class="fa fa-close delete-i active" data-step="3" data-intro="删除应用" data-position='right'></i></a>
+                    <p>Jenkins打包</p>
+                </div>
+                <div class="img-wd relative-box">
+                    <a href="${SITE_URL}tool_info">
+                        <img style="width:64px; height:64px;" src="https://magicbox.bkclouds.cc/static_api/v3/components/intro/images/maker_app01.png" >
+                    </a>
+                    <a href="javascript:;"><i class="fa fa-pencil pencil" ></i></a>
+                    <a href="javascript:;"><i  class="fa fa-close delete-i"></i></a>
+                    <p>程序包上传</p>
+                </div>
+                 <div class="img-wd relative-box">
+                    <a href="${SITE_URL}tool_info">
+                        <img style="width:64px; height:64px;" src="https://magicbox.bkclouds.cc/static_api/v3/components/intro/images/maker_app01.png" >
+                    </a>
+                    <a href="javascript:;"><i class="fa fa-pencil pencil" ></i></a>
+                    <a href="javascript:;"><i  class="fa fa-close delete-i"></i></a>
+                    <p>包测试</p>
+                </div>
+                 <div class="img-wd relative-box">
+                    <a href="${SITE_URL}tool_info">
+                        <img style="width:64px; height:64px;" src="https://magicbox.bkclouds.cc/static_api/v3/components/intro/images/maker_app01.png" >
+                    </a>
+                    <a href="javascript:;"><i class="fa fa-pencil pencil" ></i></a>
+                    <a href="javascript:;"><i  class="fa fa-close delete-i"></i></a>
+                    <p>部署测试环境</p>
+                </div>
+                 <div class="img-wd relative-box">
+                    <a href="${SITE_URL}tool_info">
+                        <img style="width:64px; height:64px;" src="https://magicbox.bkclouds.cc/static_api/v3/components/intro/images/maker_app01.png" >
+                    </a>
+                    <a href="javascript:;"><i class="fa fa-pencil pencil" ></i></a>
+                    <a href="javascript:;"><i  class="fa fa-close delete-i"></i></a>
+                    <p>部署生产环境</p>
+                </div>
+            </div>
+        </div>
+</div>
+
+</div>
+
+                </div>
+
+
+            </div>
+</%block>

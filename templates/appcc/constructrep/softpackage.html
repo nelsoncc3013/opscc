@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="king-page-topbar pl20 pr20">
+
+    <ul class="breadcrumb king-breadcrumb p12 bg-white">
+        <li>程序包</li>
+
+    </ul>
+    <ul></ul>
+    <a class="king-btn-demo king-btn king-default" title="新建程序包" href="${SITE_URL}create_soft">新建程序包</a>
+
+    <ul></ul>
+    <ul></ul>
+    <div class="form-group">
+        <label for="inputCount3"></label>
+        <input type="text" class="form-control" id="inputCount3" placeholder="根据程序包名称过滤">
+    </div>
+      <!--HTML-->
+<section class="king-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrapper" id="table9_demo1" style="height: 350px;overflow: auto;position: relative;">
+                <!-- 锁定头部表格-1 Start -->
+                <table class="table table-out-bordered table-bordered table-header-bg table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width:20%;">程序包</th>
+                            <th>版本</th>
+                            <th>创建者</th>
+                            <th>最近更新时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="${SITE_URL}package_info">crm-web.war</a></td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr>
+                          <tr>
+                            <td><a href="${SITE_URL}package_info">crm-web.war</a></td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr> <tr>
+                            <td><a href="${SITE_URL}package_info">crm-web.war</a></td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr> <tr>
+                            <td><a href="${SITE_URL}package_info">crm-web.war</a></td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr> <tr>
+                            <td>crm-web.war</td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr> <tr>
+                            <td>crm-web.war</td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr> <tr>
+                            <td>crm-web.war</td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr> <tr>
+                            <td>crm-web.war</td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr> <tr>
+                            <td>crm-web.war</td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr> <tr>
+                            <td>crm-web.war</td>
+                            <td>1.11</td>
+                            <td>kxdcc</td>
+                            <td>2017-4-22</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <!-- 锁定头部表格-1 End -->
+            </div>
+        </div>
+    </div>
+</section><!--JS-->
+<script type="text/javascript">
+$(document).ready(function($) {
+    //table9_demo1_js_start
+    //锁定头部表格-1
+    $('#table9_demo1 .table').floatThead({
+        scrollContainer: function($table){
+            return $table.closest('.wrapper');
+        }
+    });
+    //table9_demo1_js_end
+});
+</script>
+
+            </div>
+        </div>
+    </div>
+</%block>

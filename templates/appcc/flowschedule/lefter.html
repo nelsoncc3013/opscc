@@ -1,0 +1,42 @@
+<!-- lefter.html -->
+<%block name="lefter">
+<div class="king-layout1-sidebar" style="width:216px;">
+                <nav style="overflow:hidden;">
+                    <div class="king-vertical-nav9    f14">
+                        <div class="navbar-collapse navbar-hov">
+                            <ul class="nav navbar-nav side-nav">
+                                <li class="active">
+                                    <a href="${SITE_URL}app_delivery"> <i class="fa fa-dashboard ">                            </i>
+                                        <span>应用交付</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="${SITE_URL}tool_list"> <i class="fa fa-wrench ">                            </i>
+                                        <span>交付工具</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="${SITE_URL}flow_list;"> <i class="fa fa-edit ">                            </i>
+                                        <span>流程调度</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="${SITE_URL}time_tasklist"> <i class="fa fa-ellipsis-h ">                            </i>
+                                        <span>定时任务</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                              <li class="opens">
+                                    <a href="javascript:void(0);"> <i class="fa fa-wrench ">                            </i>
+                                        <span>构建库</span> <i class="fa fa-fw fa-caret-down"></i> </a>
+                                    <ul id="demo" class="collapse" style="display: block;">
+                                        <li><a href="${SITE_URL}jenkinsCI">Jenkins CI</a></li>
+                                        <li><a href="${SITE_URL}soft_package">程序包</a></li>
+                                        <li><a href="${SITE_URL}conf_package">配置包</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+</%block>

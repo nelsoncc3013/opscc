@@ -1,0 +1,129 @@
+<!-- jenkins_newitem.html -->
+<%inherit file="base_site.html"/>
+<%block name="main">
+            <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="king-page-topbar pl20 pr20">
+                    <div class="king-block" id="tab1_demo6">
+                <ul class="nav nav-tabs nav-tabs-alt nav-justified" data-toggle="tabs">
+                <li class="">
+                <a href="${SITE_URL}jenkinsCI">
+                    <i class="fa fa-home">
+                                 </i> 发布历史
+                 </a>
+                 </li>
+                <li class="">
+                    <a href="${SITE_URL}jenkins_publish_statistics">
+                        <i class="fa fa-pencil">
+                                    </i> 发布统计
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="${SITE_URL}jenkins_newitem">
+                        <i class="fa fa-cog">
+                                    </i> 新建JOB
+
+                    </a>
+                </li>
+                </ul>
+                <div class="king-block-content tab-content">
+
+                    <div class="">
+                        <h4 class="font-w300 push-15">
+                                        <div class="king-block king-block-bordered">
+    <div class="king-block-header king-gray-light">
+        <ul class="king-block-options">
+            <li>
+                <button type="button"><i class="fa fa-cog"></i></button>
+            </li>
+        </ul>
+        <h3 class="king-block-title">填写项目信息</h3>
+    </div>
+    <div class="king-block-content">
+        <!-- 水平布局表单-1 Start -->
+        <form class="form-horizontal" method="POST">
+            <div class="form-group">
+                <label for="inputCount3" class="col-sm-3 control-label">项目名：</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="inputCount3" placeholder="环境-项目名-in/out">
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">域名：</label>
+                <div class="col-sm-7">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="字母缩写">
+
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-3 control-label">数据库名称：</label>
+                <div class="col-sm-7">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="">
+
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">申请人：</label>
+                <div class="col-sm-7">
+                    <select name="" id="" class="form-control">
+                        <option value="admin">admin</option>
+                        <option value="lei.guo">lei.guo</option>
+                        <option value="lei.li">lei.li</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">是否需要开放额外端口：</label>
+                <div class="col-sm-7">
+                    <div class="radio">
+                        <label class="mr10">
+                            <input type="radio" name="optionsRadios1" id="optionsRadios1" value="" checked="">否
+                        </label>
+                        <label>
+                            <input type="radio" name="optionsRadios1" id="optionsRadios2" value="">是
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">是否需要外网：</label>
+                <div class="col-sm-7">
+                    <div class="radio">
+                        <label class="mr10">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="" checked="">否
+                        </label>
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="">是
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <label class="control-label col-sm-3" for="introduction">备注：</label>
+                <div class="col-sm-7">
+                    <textarea class="form-control" rows="3" id="introduction" placeholder="若要开放额外端口，请在此处注明端口号"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-7 col-sm-offset-3">
+                    <input type="button" class="king-btn king-success mr10" value="提交">
+                    <input type="reset" class="king-btn king-default" value="取消">
+                </div>
+            </div>
+        </form>
+        <!-- 水平布局表单-1 End -->
+    </div>
+</div>
+                                    </h4>
+                    </div>
+                </div>
+            </div>
+                    </div>
+    </div>
+            </div>
+</%block>

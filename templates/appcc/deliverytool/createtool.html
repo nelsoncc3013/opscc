@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="king-page-topbar pl20 pr20">
+
+    <ul class="breadcrumb king-breadcrumb p12 bg-white">
+        <li>交付工具</li>
+        <li>新建工具</li>
+
+    </ul>
+    <!--HTML-->
+<div class="king-block king-block-bordered">
+    <div class="king-block-header king-gray-light">
+        <ul class="king-block-options">
+            <li>
+                <button type="button"><i class="fa fa-cog"></i></button>
+            </li>
+        </ul>
+        <h3 class="king-block-title">工具信息</h3>
+    </div>
+    <div class="king-block-content">
+        <!-- 垂直布局表单-1 Start -->
+        <form>
+            <div class="form-group">
+                <label for="inputCount3">工具名称：</label>
+                <input type="text" class="form-control" id="inputCount3" placeholder="">
+            </div>
+              <div class="form-group">
+                <label for="inputSafe">工具分类</label>
+                <select class="form-control">
+                    <option></option>
+                    <option>App</option>
+                    <option>DB</option>
+                    <option>OS</option>
+                    <option>Net</option>
+                    <option>自愈</option>
+                    <option>巡检</option>
+                    <option>交付流</option>
+                    <option>流程调度</option>
+                </select>
+            </div>
+<div class="form-group">
+                <div class="radio push-right">
+                    <label class="radio-inline">
+                        <input type="radio" name="login-type">python
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="login-type">shell
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>脚本上传：</label>
+                <input type="file">
+            </div>
+
+            <div class="form-group has-feedback">
+                <label for="introduction">脚本代码：</label>
+                <textarea class="form-control" rows="3" id="introduction"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="button" class="king-btn king-success mr10" value="保存">
+                <input type="reset" class="king-btn king-default" value="取消">
+            </div>
+        </form>
+        <!-- 垂直布局表单-1 End -->
+    </div>
+</div>
+</div>
+                </div>
+            </div>
+</%block>

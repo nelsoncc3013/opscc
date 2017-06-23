@@ -1,0 +1,234 @@
+<!-- jenkinsCI.html -->
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <script type="text/javascript">
+  $(function () {
+    //table2_demo4_js_start
+    //表格(DataTables)-4，综合示例
+    var language = {
+      search: '搜索：',
+      lengthMenu: "每页显示 _MENU_ 记录",
+      zeroRecords: "没找到相应的数据！",
+      info: "分页 _PAGE_ / _PAGES_",
+      infoEmpty: "暂无数据！",
+      infoFiltered: "(从 _MAX_ 条数据中搜索)",
+      paginate: {
+        first: '首页',
+        last: '尾页',
+        previous: '上一页',
+        next: '下一页',
+      }
+    }
+     $("#table21_demo4").dataTable({
+        autoWidth: false,
+        lengthChange: true, //不允许用户改变表格每页显示的记录数
+        pageLength : 10, //每页显示几条数据
+        lengthMenu: [5, 10, 20], //每页显示选项
+        pagingType: 'full_numbers',
+        ordering: true,
+
+    "columns": [
+        { "data": "name", render: function ( data, type, row ) {
+        return '<a href="${SITE_URL}jenkins_app_build?name='+ data+'">'+ data+'</a>';
+    } },
+        { "data": "memo",render:function(data,type,row){
+            return '<a>'+data+'</a>'
+        } },
+        { "data": "dev" },
+        { "data": "test" },
+        { "data": "ops" },
+        { "data": "lasttime" },
+          {
+              data: null,
+              orderable: false,
+              render: function (data, type, row, meta) {
+                  return '<a class="king-btn king-success">删除</a>';
+              }
+          }
+    ],
+
+        language:language
+    });
+
+    var t = $("#app_list").DataTable();//获取datatables对象
+    //删除按钮绑定事件
+    $("#app_delete tbody").on('click', 'a.del', function(){
+        var row = t.row( $(this).parents('tr') ),//获取按钮所在的行
+          data = row.data();
+        if(confirm('确定要删除'+data.name+' ?')){
+          row.remove().draw();
+        }
+    $("#app_build tbody").on('click,', 'a.del', function(){
+        var row = t.row( $(this).parents('tr') ),
+            data = row.data();
+        if(confirm('确定要删除'+data.name+' ?')){
+          row.remove().draw();
+        }
+
+    })
+    });
+    //table2_demo4_js_end
+  });
+
+    </script>
+<script>
+    var oBtn = document.getElementById('配置');
+    oBtn.onclick = function(){
+        alert(1);
+    };
+    oBtn.click();  //模拟点击事件，页面刷新，出发点击事件
+
+</script>
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="container-fluid">
+        <!-- 带搜索表格(DataTables)-1 Start -->
+        <table id="app_list" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>项目</th>
+                    <th>上次成功时间</th>
+                    <th>上次失败时间</th>
+                    <th>上次发布状态</th>
+                    <th>上次发布人员</th>
+                    <th>操作</th>
+                    <th style="width: 150px">进度</th>
+                </tr>
+            </thead>
+            <tbody id="app_list">
+            %for app in app_list:
+            <tr>
+                <td>
+                    <a href="${app.app_url}"> ${app.app_name}
+                </a>
+                </td>
+                <td>${app.last_success_time}</td>
+                <td>${app.last_fail_time}</td>
+                <td id="${app.app_name}">${app.last_status}</td>
+                <td>${app.last_trigger_person}</td>
+                <td>
+                    <div class="king-btn-demo king-btn-group">
+                        <a type="button" class="king-btn king-info" name="${app.app_name}" onclick="app_change_config(this.name)" title="配置">
+                            <i class="fa fa-cog btn-icon"></i>配置
+                        </a>
+                        <a type="button" class="king-btn king-success" name="${app.app_name}" onclick="app_build(this.name)" title="构建">
+                            <i class="fa fa-mail-reply-all btn-icon"></i>构建
+                        </a>
+                        <a type="button" class="king-btn king-danger" name="${app.app_name}" onclick="app_stop(this.name)" title="停止">
+                            <i class="fa fa-close btn-icon"></i>停止
+                        </a>
+<script>
+    function app_change_config(name) {
+        var d = dialog({
+            width: 260,
+            title: '请输入'+name+' svn路径：',
+            content: '<textarea class="form-control" style="height:60px;" id="conf_input"></textarea>',
+            okValue: '确定',
+            ok: function() {
+                // do something
+              var _conf =  $('#conf_input').val();
+                /*  $.get('/jenkins_app_change_config',{
+                      conf:_conf,
+                      name:name
+                  },function (res) {
+                      console.log(res);
+                      alert('执行成功');
+                  },function (error) {
+                      console.log(error);
+                      alert('执行失败！！');
+                  });
+                  */
+            $.ajax({
+                    url:'/jenkins_app_change_config',
+                    dataType: 'text',
+                    method:'GET',
+                    data:{
+                        conf:_conf,
+                        name:name
+                    },
+                    success:function(data){
+                       console.log(data);
+                              alert('执行成功');
+                    },
+                    error:function(msg){
+
+                        alert("执行失败!!!" );
+                    }
+                });
+
+            },
+            cancelValue: '取消',
+            cancel: function() {
+                // do something
+            }
+        });
+        d.showModal();
+    }
+    function app_build(name){
+        running(name,0);
+        start_build(name,0);
+    }
+
+    function running(name,per) {
+       window.interval= setInterval(function () {
+            if(per<=95){
+                per+=2;
+            }
+            document.getElementById(name+'_bar').style.width=per+'%';
+        },2000);
+    }
+    function start_build(name,per) {
+        var url = "jenkins_app_build/"+name;
+        $.ajax({
+            url:url,
+            dataType: 'text',
+            success:function(data){
+                var status = JSON.parse(data).status;
+                if(!status){
+                    clearInterval(window.interval);
+                    document.getElementById(name+'_bar').style.width='0%';
+                }
+            },
+            error:function(msg){
+                clearInterval(window.interval);
+                document.getElementById(name+'_bar').style.width='0%';
+                alert("错误信息：" + msg);
+            }
+        });
+    }
+    function app_stop(name) {
+        $.ajax({
+            url:'jenkins_app_stop/'+name,
+            dataType: 'text',
+            success:function(data){
+                console.log(data);
+                              alert('执行成功');
+                    },
+            error:function(msg){
+                alert("执行失败!!!" );
+
+            }
+        });
+    };
+
+</script>
+
+
+                    </div>
+                </td>
+                <td><div class="progress king-progress progress-striped active">
+    <div id="${app.app_name}_bar" class="progress-bar progress-bar-primary" style="width: 0%"></div>
+</div>
+                </td>
+            </tr>
+            %endfor
+            </tbody>
+        </table>
+        <!-- 带搜索表格(DataTables)-1 End -->
+    </div>
+            </div>
+
+
+
+</%block>
+

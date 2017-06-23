@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="king-page-topbar pl20 pr20">
+
+    <ul class="breadcrumb king-breadcrumb p12 bg-white">
+        <li><a href="${SITE_URL}main_deploy">返回</a></li>
+        <li>部署</li>
+
+    </ul>
+    <ul></ul>
+    <!--
+如果没有引用以下文件，请去掉此注释
+<link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css?v=1.0.1" rel="stylesheet">
+-->
+<div class="king-process king-justified-process king-process-success">
+    <div class="process-done step-hasnext">
+        1.分批策略
+    </div>
+    <div class="process-did step-hasnext">
+        2.选择主机
+    </div>
+    <div class="process-did step-hasnext">
+        3.选择包
+    </div>
+    <div class="process-did">
+        4.确认发布清单
+    </div>
+</div>
+     <ul></ul>
+     <ul></ul>
+    <!--
+如果没有引用以下文件，请去掉此注释
+<link href="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css?v=1.0.1" rel="stylesheet">
+<script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+<script src="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+-->
+<div class="tab-box" id="myTab4">
+    <ul class="nav nav-tabs king-nav-tabs2 king-tab-success">
+        <li class="active">
+            <a href="#tab4_1" data-toggle="tab">分批策略</a>
+        </li>
+        <li>
+            <a href="#tab4_2" data-toggle="tab">选择主机</a>
+        </li>
+        <li>
+            <a href="#tab4_3" data-toggle="tab">选择包</a>
+        </li>
+        <li>
+            <a href="#tab4_4" data-toggle="tab">确认发布清单</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab4_1">
+           <div class="row">
+    <div class="col-sm-6">
+        <p class="magic-desc">第一批</p>
+        <textarea class="form-control" id="zclip_text" style="height:100px;"></textarea><br>
+        <a href="javascript:;" class="king-btn king-info">返回</a>
+    </div>
+    <div class="col-sm-6">
+        <p class="magic-desc">第二批</p>
+        <textarea class="form-control" style="height:100px;"></textarea><br>
+        <a href="javascript:;" class="king-btn king-info">下一步</a>
+    </div>
+</div>
+
+        </div>
+        <div class="tab-pane fade" id="tab4_2">
+            <div class="panel panel-default pannel-overflow panel-tables table7_demo">
+    <div class="panel-heading"> <i class="fa fa-list-ul"></i> 主机列表
+    </div>
+
+    <div class="panel-content">
+        <!-- 带操作按钮表格-2 Start -->
+        <table class="table table-header-bg table-hover mb0" id="table_demo2">
+            <thead>
+                <tr>
+                    <th style="width: 25px">
+                        <input type="checkbox" name="checkall" value="">
+                    </th>
+                    <th style="width: 100px">IP</th>
+                    <th style="width:25%">所属业务</th>
+                    <th style="width:25%">负责人</th>
+                    <th style="width:15%">最后发布时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                    <td>192.168.2.11</td>
+                    <td>CRM</td>
+                    <td>张三</td>
+                    <td>2017-4-20</td>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                    <td>192.168.2.12</td>
+                    <td>CRM</td>
+                    <td>张三</td>
+                    <td>2017-4-20</td>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                     <td>192.168.2.13</td>
+                    <td>CRM</td>
+                    <td>张三</td>
+                    <td>2017-4-20</td>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                   <td>192.168.2.14</td>
+                    <td>CRM</td>
+                    <td>张三</td>
+                    <td>2017-4-20</td>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                     <td>192.168.2.15</td>
+                    <td>CRM</td>
+                    <td>张三</td>
+                    <td>2017-4-20</td>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                   <td>192.168.2.16</td>
+                    <td>CRM</td>
+                    <td>张三</td>
+                    <td>2017-4-20</td>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <div class="pull-left">
+                            <a class="king-btn king-radius king-danger ml10"  title="加入主机">加入主机</a>
+                            <a class="king-btn king-radius king-danger ml10"  title="下一步">下一步</a>
+
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab4_3">
+           <div class="panel panel-default pannel-overflow panel-tables table7_demo">
+    <div class="panel-heading"> <i class="fa fa-list-ul"></i> 主机列表
+    </div>
+
+    <div class="panel-content">
+        <!-- 带操作按钮表格-2 Start -->
+        <table class="table table-header-bg table-hover mb0" id="table_demo2">
+            <thead>
+                <tr>
+                    <th style="width: 25px">
+                        <input type="checkbox" name="checkall" value="">
+                    </th>
+                    <th style="width: 100px">包名</th>
+                    <th style="width:25%">版本</th>
+                    <th style="width:25%">所属业务</th>
+                    <th style="width:15%">最后发布时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                    <th style="width:20%;">crm-web-20170510-prd</th>
+            <th>1.11</th>
+            <th>CRM</th>
+                        <th>2017-4-28</th>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                     <th style="width:20%;">crm-web-20170510-prd</th>
+            <th>1.11</th>
+            <th>CRM</th>
+                        <th>2017-4-28</th>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                     <th style="width:20%;">crm-web-20170510-prd</th>
+            <th>1.11</th>
+            <th>CRM</th>
+                        <th>2017-4-28</th>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                  <th style="width:20%;">crm-web-20170510-prd</th>
+            <th>1.11</th>
+            <th>CRM</th>
+                        <th>2017-4-28</th>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                  <th style="width:20%;">crm-web-20170510-prd</th>
+            <th>1.11</th>
+            <th>CRM</th>
+                        <th>2017-4-28</th>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="">
+                    </td>
+                   <th style="width:20%;">crm-web-20170510-prd</th>
+            <th>1.11</th>
+            <th>CRM</th>
+                        <th>2017-4-28</th>
+                    <td>
+                        <button class="btn btn-xs btn-primary" title="编辑">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                        <button class="btn btn-xs btn-danger" title="删除">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <div class="pull-left">
+                            <a class="king-btn king-radius king-danger ml10"  title="加入程序包">加入程序包</a>
+                                                       <a class="king-btn king-radius king-danger ml10"  title="上一步">上一步</a>
+
+                            <a class="king-btn king-radius king-danger ml10"  title="下一步">下一步</a>
+
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+            </div>
+        </div>
+                <div class="tab-pane fade" id="tab4_4">
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:20%;">分批策略</th>
+            <th>主机列表</th>
+            <th>部署程序包</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>第一批</td>
+            <td>192.168.2.11</td>
+            <td>
+                crm-web-20170510-prd.war
+            </td>
+        </tr>
+        <tr>
+            < <td>192.168.2.11</td>
+            <td>192.168.2.12</td>
+            <td>
+                crm-web-20170510-prd.war
+            </td>
+        </tr>
+        <tr>
+             <td>192.168.2.12</td>
+            <td>192.168.2.13</td>
+            <td>
+                crm-web-20170510-prd.war
+            </td>
+        </tr>
+        <tr>
+             <td>192.168.2.13</td>
+            <td>192.168.2.14</td>
+            <td>
+                crm-web-20170510-prd.war
+            </td>
+        </tr>
+     <tr>
+             <td>第二批</td>
+            <td>192.168.2.15</td>
+            <td>
+                crm-web-20170510-prd.war
+            </td>
+        </tr>
+     <tr>
+             <td>192.168.2.14</td>
+            <td>192.168.2.16</td>
+            <td>
+                crm-web-20170510-prd.war
+            </td>
+        </tr>
+     <tr>
+             <td>192.168.2.15</td>
+            <td></td>
+            <td>
+                crm-web-20170510-prd.war
+            </td>
+        </tr>
+     <tr>
+             <td>192.168.2.16</td>
+            <td></td>
+            <td>
+                crm-web-20170510-prd.war
+            </td>
+        </tr>
+    </tbody>
+<tbody>
+<tr>
+                    <td colspan="6">
+                        <div class="pull-left">
+                            <a class="king-btn king-radius king-danger ml10"  title="上一步">上一步</a>
+                            <a class="king-btn king-radius king-danger ml10"  title="确定">确定</a>
+
+                        </div>
+                    </td>
+                </tr>
+</tbody>
+</table>
+        </div>
+
+    </div>
+</div>
+</div>
+                </div>
+            </div>
+</%block>

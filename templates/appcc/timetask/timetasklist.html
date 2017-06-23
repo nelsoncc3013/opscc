@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+    <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="king-page-topbar pl20 pr20">
+
+    <ul class="breadcrumb king-breadcrumb p12 bg-white">
+        <li>定时任务</li>
+
+    </ul>
+    <ul></ul>
+      <a class="king-btn-demo king-btn king-default" title="创建定时任务" href="${SITE_URL}create_timetask">创建定时任务</a>
+
+
+    <ul></ul>
+    <ul></ul>
+    <!--
+如果没有引用以下文件，请去掉此注释
+<link href="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css?v=1.0.1" rel="stylesheet">
+<script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+-->
+<table class="table table-bordered table7_demo">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>名称</th>
+            <th>目标IP</th>
+            <th>定时策略</th>
+            <th>创建者</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>OS巡检</td>
+            <td>192.168.2.11</td>
+            <td>*****</td>
+            <td>kxdcc</td>
+            <td>
+                <span class="label label-info">Active</span>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-success" title="激活">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button class="btn btn-xs btn-warning" title="编辑">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </button>
+                <button class="btn btn-xs btn-danger" title="删除">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+             <td>2</td>
+            <td>DB巡检</td>
+            <td>192.168.2.19</td>
+            <td>*/10 ****</td>
+            <td>kxdcc</td>
+            <td>
+                <span class="label label-danger">Banned</span>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-inverse" title="激活">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button class="btn btn-xs btn-inverse" title="编辑">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </button>
+                <button class="btn btn-xs btn-inverse" title="删除">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+             <td>3</td>
+            <td>APP巡检</td>
+            <td>192.168.2.11</td>
+            <td>**1**</td>
+            <td>kxdcc</td>
+            <td>
+                <span class="label label-success">Active</span>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-success" title="激活">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button class="btn btn-xs btn-warning" title="编辑">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </button>
+                <button class="btn btn-xs btn-danger" title="删除">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+             <td>4</td>
+            <td>代码质量评估</td>
+            <td>192.168.2.66</td>
+            <td>**/1***</td>
+            <td>kxdcc</td>
+            <td>
+                <span class="label label-success">Active</span>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-success" title="激活">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button class="btn btn-xs btn-warning" title="编辑">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </button>
+                <button class="btn btn-xs btn-danger" title="删除">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+             <td>5</td>
+            <td>磁盘剩余空间上报</td>
+            <td>192.168.2.11</td>
+            <td>*****</td>
+            <td>kxdcc</td>
+            <td>
+                <span class="label label-danger">Banned</span>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-success" title="激活">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button class="btn btn-xs btn-warning" title="编辑">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </button>
+                <button class="btn btn-xs btn-danger" title="删除">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+                </div>
+
+
+            </div>
+</%block>

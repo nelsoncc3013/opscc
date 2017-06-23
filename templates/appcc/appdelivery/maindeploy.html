@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<%inherit file="base_site.html"/>
+<%block name="main">
+<div class="king-content-wrap">
+    <div class="king-layout1-content" style="margin-left: 216px;">
+        <div class="king-page-topbar pl20 pr20">
+
+            <ul class="breadcrumb king-breadcrumb p12 bg-white">
+                <li><a href="${SITE_URL}app_delivery">返回</a></li>
+                <li><a id="appName">...</a></li>
+
+            </ul>
+            <ul></ul>
+            <a class="king-btn-demo king-btn king-default" title="部署" href="${SITE_URL}app_deploy">部署</a>
+            <a class="king-btn-demo king-btn king-default" title="维护" href="${SITE_URL}deploy_maintain">维护</a>
+            <a class="king-btn-demo king-btn king-default" title="查看历史" href="${SITE_URL}deploy_historytask">查看历史</a>
+
+            <ul></ul>
+        </div>
+
+
+        <!-- 设置面板Start -->
+        <!-- 设置面板End -->
+
+        <ul></ul>
+        <ul></ul>
+        <table class="table">
+            <thead>
+            <tr>
+
+                <th style="width:15%;">开发负责人</th>
+                <th style="width:15%;">测试负责人</th>
+                <th style="width:15%;">运维负责人</th>
+                <th style="width:15%;">集群数量</th>
+                <th style="width:15%;">主机数量</th>
+                <th style="width:15%;">程序包数量</th>
+                <th style="width:15%;">配置包数量</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            %for app in app_info:
+            <tr>
+                <td>${app.get('devleader')}</td>
+                <td>${app.get('testleader')}</td>
+                <td>${app.get('opsleader')}</td>
+                <td>${app.get('numcluster')}</td>
+                <td>${app.get('numhost')}</td>
+                <td>${app.get('numsoftpack')}</td>
+                <td>${app.get('numconfpack')}</td>
+            </tr>
+            %endfor
+            </tbody>
+        </table>
+        <div class="tab-box" id="myTab3">
+            <ul class="nav nav-tabs king-nav-tabs2">
+                <li class="active">
+                    <a href="#tab3_1" data-toggle="tab">程序包</a>
+
+                </li>
+                <li>
+                    <a href="#tab3_2" data-toggle="tab">配置包</a>
+                </li>
+                <li>
+                    <a href="#tab3_3" data-toggle="tab">部署流水线</a>
+                </li>
+            </ul>
+            <div class="tab-content mb20">
+                <div class="tab-pane fade in active" id="tab3_1">
+                    <!--HTML-->
+                    <!--HTML-->
+                    <!--
+                    如果没有引用以下文件，请去掉此注释
+                    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+                    <link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css?v=1.0.1" rel="stylesheet">
+                    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+                    -->
+                    <div class="panel panel-default table7_demo king-table7-demo3">
+
+                        <div class="panel-body">
+                            <div class="king-wrapper clearfix">
+                                <form class="form-inline king-search-form king-no-bg pull-left">
+
+                                    <div class="form-group">
+                                        <div class="input-group king-input-group">
+                                            <input type="text" class="form-control pl30 king-form-control"
+                                                   placeholder="请输入关键字">
+                                            <span class="glyphicon glyphicon-search form-control-feedback king-form-control-feedback"></span>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <a href="javascript:void(0);" class="king-btn king-btn-new pull-right">
+                                    配置程序包
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- 带操作按钮表格-3 Start -->
+                            <table class="table table-hover mb0">
+                                <thead>
+                                <tr class="active">
+                                    <th style="width:10%">程序包</th>
+                                    <th style="width:20%">部署路径</th>
+                                    <th style="width:10%">发布版本</th>
+                                    <th style="width:25%">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="softlist">
+                                %for soft in soft_list:
+                                <tr style="display: table-row; opacity: 1;">
+                                    <td>${soft.get('name')}</td>
+                                    <td>${soft.get('path')}</td>
+                                    <td>${soft.get('cversion')}</td>
+                                    <td>
+                                        <button id="conf_softdeploy" class="king-btn king-info">设置发布策略</button>
+                                        <button id="cancle_softpackage" class="king-btn king-warning">解除绑定</button>
+
+                                    </td>
+                                </tr>
+                                %endfor
+
+
+                                </tbody>
+
+                            </table>
+                            <!-- 带操作按钮表格-3 End -->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="tab3_2">
+                    <div class="panel panel-default table7_demo king-table7-demo3">
+
+                        <div class="panel-body">
+                            <div class="king-wrapper clearfix">
+                                <form class="form-inline king-search-form king-no-bg pull-left">
+
+                                    <div class="form-group">
+                                        <div class="input-group king-input-group">
+                                            <input type="text" class="form-control pl30 king-form-control"
+                                                   placeholder="请输入关键字">
+                                            <span class="glyphicon glyphicon-search form-control-feedback king-form-control-feedback"></span>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <a href="javascript:void(0);" class="king-btn king-btn-new pull-right">
+                                    配置配置包
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- 带操作按钮表格-3 Start -->
+                            <table class="table table-hover mb0">
+                                <thead>
+                                <tr class="active">
+                                    <th style="width:10%">配置包名</th>
+                                    <th style="width: 10%">环境类型</th>
+                                    <th style="width:20%">部署路径</th>
+                                    <th style="width:10%">当前版本</th>
+                                    <th style="width:25%">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="conflist">
+                                %for conf in conf_list:
+                                <tr style="display: table-row; opacity: 1;">
+                                    <td>${conf.get('name')}</td>
+                                    <td>${conf.get('envfile')}</td>
+                                    <td>${conf.get('path')}</td>
+                                    <td>${conf.get('cversion')}</td>
+                                    <td>
+                                        <button id="conf_confdeploy" class="king-btn king-info">设置发布策略</button>
+                                        <button id="cancle_confpackage" class="king-btn king-warning">解除绑定</button>
+
+                                    </td>
+                                </tr>
+                                %endfor
+
+                            </table>
+                            <!-- 带操作按钮表格-3 End -->
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab3_3">
+
+                    <div class="king-step2">
+                        <div class="king-process king-justified-process  king-process-success ">
+                            <div class="process-done step-hasnext">构建</div>
+                            <div class="process-did step-hasnext">测试</div>
+                            <div class="process-did step-hasnext">UAT发布</div>
+                            <div class="process-did">生产发布</div>
+                        </div>
+                    </div>
+                    <!-- 设置面板样式一Start -->
+                    <!-- 设置面板样式一End -->
+                    <div class="container-fluid mb0 ">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="container-fluid mb0 ">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">构建</h3>
+                                                </div>
+                                                <!-- 列表-1 Start -->
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info">构建申请</span>
+                                                        <i class="fa fa-calendar"></i> Jenkins构建
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info">代码清单</span>
+                                                        <i class="fa fa-comment"></i> 打包
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-danger"></span>
+                                                        <i class="fa fa-shopping-cart"></i> 上传程序包
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-primary">测试部署清单</span>
+                                                        <i class="fa fa-check"></i> 测试部署队列
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-primary"></span>
+                                                        <i class="fa fa-check"></i> <a>+添加步骤</a>
+                                                    </li>
+
+
+                                                </ul>
+                                                <!-- 列表-1 End -->
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">测试发布</h3>
+                                                </div>
+                                                <!-- 列表-1 Start -->
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info">发布申请</span>
+                                                        <i class="fa fa-calendar"></i> 开发申请
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info"></span>
+                                                        <i class="fa fa-comment"></i> 测试环境部署
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-danger"></span>
+                                                        <i class="fa fa-shopping-cart"></i> 部署自测
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-primary"></span>
+                                                        <i class="fa fa-check"></i> 通知测试
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info">测试报告</span>
+                                                        <i class="fa fa-check"></i> 测试结果收集
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info">UAT部署清单</span>
+                                                        <i class="fa fa-check"></i> UAT部署队列
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-primary"></span>
+                                                        <i class="fa fa-check"></i> <a>+添加步骤</a>
+                                                    </li>
+
+
+                                                </ul>
+                                                <!-- 列表-1 End -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="container-fluid mb0 ">
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">UAT发布</h3>
+                                                </div>
+                                                <!-- 列表-1 Start -->
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-warning">测试经理</span>
+                                                        <i class="fa fa-calendar"></i> 发布申请
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-warning"></span>
+                                                        <i class="fa fa-comment"></i> UAT发布
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-danger"></span>
+                                                        <i class="fa fa-shopping-cart"></i> 部署自测
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-primary"></span>
+                                                        <i class="fa fa-check"></i> 通知测试
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-primary">生产部署清单</span>
+                                                        <i class="fa fa-check"></i> 生产部署队列
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-primary"></span>
+                                                        <i class="fa fa-check"></i> <a>+添加步骤</a>
+                                                    </li>
+
+
+                                                </ul>
+                                                <!-- 列表-1 End -->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">生产发布</h3>
+                                                </div>
+                                                <!-- 列表-1 Start -->
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-warning">测试总监</span>
+                                                        <i class="fa fa-calendar"></i> 发布申请
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info"></span>
+                                                        <i class="fa fa-calendar"></i> 部署前检查
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info"></span>
+                                                        <i class="fa fa-comment"></i> 生产发布
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-danger"></span>
+                                                        <i class="fa fa-shopping-cart"></i> 部署自检
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info"></span>
+                                                        <i class="fa fa-check"></i> 通知测试
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info"></span>
+                                                        <i class="fa fa-check"></i> 测试结果
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-info"></span>
+                                                        <i class="fa fa-check"></i> 结果通知
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="badge king-primary"></span>
+                                                        <i class="fa fa-check"></i> <a>+添加步骤</a>
+                                                    </li>
+
+
+                                                </ul>
+                                                <!-- 列表-1 End -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</%block>

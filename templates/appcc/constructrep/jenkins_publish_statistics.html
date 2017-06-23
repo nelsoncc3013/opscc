@@ -1,0 +1,160 @@
+<!-- jenkins_publish_statistics.html -->
+<%inherit file="base_site.html"/>
+<%block name="main">
+            <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+<div class="king-page-topbar pl20 pr20">
+                    <div class="king-block" id="tab1_demo6">
+                <ul class="nav nav-tabs nav-tabs-alt nav-justified" data-toggle="tabs">
+                <li class="">
+                <a href="${SITE_URL}jenkinsCI">
+                    <i class="fa fa-home">
+                                 </i> 发布历史
+                 </a>
+                 </li>
+                <li class="active">
+                    <a href="${SITE_URL}jenkins_publish_statistics">
+                        <i class="fa fa-pencil">
+                                    </i> 发布统计
+                    </a>
+                </li>
+                <li class="">
+                    <a href="${SITE_URL}jenkins_newitem">
+                        <i class="fa fa-cog">
+                                    </i> 新建JOB
+
+                    </a>
+                </li>
+                </ul>
+                <div class="king-block-content tab-content">
+                    <div class="">
+                        <h4 class="font-w300 push-15">
+                                        <div class="box-body" id="tableexport_demo">
+    <div class="btn-group">
+        <button class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> 导出表格</button>
+        <ul class="dropdown-menu " role="menu">
+            <li>
+                <a href="#" onclick="exportJson1();"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/json.png" width="24px"> JSON</a>
+            </li>
+            <li>
+                <a href="#" onclick="exportJson2();"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/json.png" width="24px"> JSON (ignoreColumn)</a>
+            </li>
+            <li>
+                <a href="#" onclick="exportJson3();"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/json.png" width="24px"> JSON (with Escape)</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#" onclick="exportXml();"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/xml.png" width="24px"> XML</a>
+            </li>
+            <li>
+                <a href="#" onclick="exportSql()"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/sql.png" width="24px"> SQL</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#" onclick="exportCsv()"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/csv.png" width="24px"> CSV</a>
+            </li>
+            <li>
+                <a href="#" onclick="exportTxt()"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/txt.png" width="24px"> TXT</a>
+            </li>
+            <li class="divider"></li>
+
+            <li>
+                <a href="#" onclick="exportExcel()"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/xls.png" width="24px"> XLS</a>
+            </li>
+            <li>
+                <a href="#" onclick="exportDoc()"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/word.png" width="24px"> Word</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#" onclick="exportPdf()"> <img src="https://magicbox.bkclouds.cc/static_api/v3/assets/tableexport/icons/pdf.png" width="24px"> PDF</a>
+            </li>
+        </ul>
+    </div>
+    <table id="tableexport_demo1" class="table table-striped">
+        <thead>
+            <tr class="warning">
+                <th>Name</th>
+                <th>发布成功次数</th>
+                <th>发布失败次数</th>
+                <th>%失败百分比</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>crm</td>
+                <td>90</td>
+                <td>10</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>crm</td>
+                <td>90</td>
+                <td>10</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>crm</td>
+                <td>90</td>
+                <td>10</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>crm</td>
+                <td>90</td>
+                <td>10</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>crm</td>
+                <td>90</td>
+                <td>10</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="fb-comments" data-numposts="5" data-colorscheme="light"></div>
+</div>
+<script type="text/javascript">
+    function exportJson1(){
+        $('#tableexport_demo1').tableExport({type:'json',escape:'false'});
+    }
+    function exportJson2(){
+        $('#tableexport_demo1').tableExport({type:'json',escape:'false',ignoreColumn:'[2,3]'});
+    }
+    function exportJson3(){
+        $('#tableexport_demo1').tableExport({type:'json',escape:'true'});
+    }
+    function exportXml(){
+        $('#tableexport_demo1').tableExport({type:'xml',escape:'false'});
+    }
+    function exportSql(){
+         $('#tableexport_demo1').tableExport({type:'sql'});
+    }
+    function exportCsv(){
+         $('#tableexport_demo1').tableExport({type:'csv',escape:'false'});
+    }
+    function exportTxt(){
+         $('#tableexport_demo1').tableExport({type:'txt',escape:'false', tableName: 'ResolutionReport'});
+    }
+    function exportExcel(){
+         $('#tableexport_demo1').tableExport({type:'excel',escape:'false'});
+    }
+    function exportDoc(){
+         $('#tableexport_demo1').tableExport({type:'doc',escape:'false'});
+    }
+    function exportPowerpoint(){
+         $('#tableexport_demo1').tableExport({type:'powerpoint',escape:'false'});
+    }
+    function exportPdf(){
+         $('#tableexport_demo1').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});
+    }
+</script>
+                                    </h4>
+
+                    </div>
+                </div>
+            </div>
+                    </div>
+    </div>
+            </div>
+</%block>
